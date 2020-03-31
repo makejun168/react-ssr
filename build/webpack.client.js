@@ -32,8 +32,27 @@ const config = {
     },
     // 最简单的配置
     plugins: [
-        new HTMLPlugin()
+        new HTMLPlugin({
+            template: path.join(__dirname, '../client/template.html')
+        })
     ]
+}
+
+// localhost:8888/filename
+
+if (isDev) {
+    config.devServer = {
+        host: '0.0.0.0', // 可以使用任何方式进行访问 可以使用本机访问,
+        port: '8888',
+        contentBase: path.join(__dirname, '../dist'),
+        hot: true,
+        overlay: {
+            errors: true
+        },
+        historyApiFallback: {
+            index: '/index.html'
+        }
+    }
 }
 
 module.exports = config;
