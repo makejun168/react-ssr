@@ -1,0 +1,30 @@
+{
+  "name": "react-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config build/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makejun168/react-ssr.git"
+  },
+  "keywords": [
+    "poloma"
+  ],
+  "author": "PoloMa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/makejun168/react-ssr/issues"
+  },
+  "homepage": "https://github.com/makejun168/react-ssr#readme",
+  "dependencies": {
+    "react": "^16.13.1",
+    "webpack": "^4.42.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
+  }
+}
