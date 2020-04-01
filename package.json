@@ -9,7 +9,9 @@
     "build:server": "webpack --config build/webpack.server.js",
     "build:client": "webpack --config build/webpack.client.js",
     "build": "npm run clear && npm run build:client && npm run build:server",
-    "server": "cross-env NODE_ENV=development node server/server.js"
+	"server": "cross-env NODE_ENV=development node server/server.js",
+	"link": "eslint --ext .js --ext .jsx client/",
+	"preCommit": "npm run link"
   },
   "repository": {
     "type": "git",
