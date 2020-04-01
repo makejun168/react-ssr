@@ -9,7 +9,7 @@
     "build:server": "webpack --config build/webpack.server.js",
     "build:client": "webpack --config build/webpack.client.js",
     "build": "npm run clear && npm run build:client && npm run build:server",
-    "server": "cross-env NODE_ENV=development node server/server.js",
+    "server": "nodemon server/server.js",
     "link": "eslint --ext .js --ext .jsx client/",
     "pre-commit": "npm run link"
   },
@@ -31,6 +31,7 @@
     "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "serve-favicon": "^2.5.0",
     "webpack": "^4.42.1"
   },
   "devDependencies": {
@@ -54,9 +55,11 @@
     "http-proxy-middleware": "^1.0.3",
     "husky": "^4.2.3",
     "memory-fs": "^0.5.0",
+    "nodemon": "^2.0.2",
     "react-hot-loader": "^4.5.3",
     "rimraf": "^3.0.2",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   }
 }

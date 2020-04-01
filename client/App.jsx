@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <p>APP 123123123</p>
+  <p>APP 123123123 </p>
 )
 
 

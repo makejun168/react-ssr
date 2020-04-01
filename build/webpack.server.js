@@ -1,10 +1,12 @@
 const path = require('path') // 导入Node.js的path模块
+const webpackMerge = require('webpack-merge')
+const baseConfig = require('./webpack.base')
 // 使用绝对路径 避免错误
 const HTMLPlugin = require('html-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development' // 判断是否是开发环境 或者 生产环境
 
-const config = {
+const config = webpackMerge(baseConfig, {
   // 打包后的运行环境
   mode: 'none',
   target: 'node',
@@ -19,26 +21,10 @@ const config = {
     publicPath: '/public', // 公共资源路径 一般使用cdn的时候 才会使用 区分API请求 还是静态资源 静态资源部署到CDN 有用
     libraryTarget: 'commonjs2' // commonjs 的模块加载方案
   },
-  module: {
-    // test 检查文件 是否使用规则 babel-loader 编译 es6 7 8
-    rules: [
-      {
-        test: /.jsx$/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /.js$/,
-        loader: 'babel-loader',
-        exclude: [
-          path.join(__dirname, '../node_modules')
-        ]
-      }
-    ]
-  },
   // 最简单的配置
   plugins: [
     // new HTMLPlugin()
   ]
-}
+})
 
 module.exports = config
