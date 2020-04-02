@@ -5,6 +5,9 @@ module.exports = {
     path: path.join(__dirname, '../dist'),
     publicPath: '/public'
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     // test 检查文件 是否使用规则 babel-loader 编译 es6 7 8
     rules: [
