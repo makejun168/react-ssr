@@ -11,7 +11,7 @@ import TopicDetail from '../views/topic-detail/index';
 // 整个路由都等于 / 才会匹配到
 
 export default () => [
-  <Route path="/" render={() => <Redirect to="/list" />} component={TopicList} exact />,
-  <Route path="/list" component={TopicList} />,
-  <Route path="/detail" component={TopicDetail} />,
+  <Route path="/" key="home" render={() => <Redirect to="/list" />} component={TopicList} exact />,
+  <Route path="/list" component={TopicList} key="list" />,
+  <Route path="/detail" component={TopicDetail} key="detail" />,
 ]

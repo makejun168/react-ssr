@@ -1,4 +1,5 @@
 // 纯前端相关的 交互逻辑
+// import React from 'react'
 import {
   observable, computed, action, autorun,
 } from 'mobx';
@@ -21,7 +22,7 @@ export class AppState {
 const appState = new AppState()
 
 autorun(() => {
-  console.log(appState.msg)
+//   console.log(appState.msg)
 })
 
 setInterval(() => {

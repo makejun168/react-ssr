@@ -15,10 +15,15 @@ export default class TopicList extends React.Component {
   }
 
   render() {
-    const { appState } = this.props
-    const { msg } = appState
+    const { msg } = this.props.appState // eslint-disable-line
     return (
-      <div>{msg}</div>
+
+      <div>
+        <span>
+          {msg}
+        </span>
+      </div>
+    //   <div>{msg}</div>
     )
   }
 }
