@@ -20,14 +20,14 @@ const config = webpackMerge(baseConfig, {
   module: {
     // test 检查文件 是否使用规则 babel-loader 编译 es6 7 8
     rules: [
-      {
-        enforce: 'pre',
-        test: /.(jsx|js)$/,
-        loader: 'eslint-loader',
-        exclude: [
-          path.join(__dirname, '../node_modules')
-        ]
-      },
+      // {
+      //   enforce: 'pre',
+      //   test: /.(jsx|js)$/,
+      //   loader: 'eslint-loader',
+      //   exclude: [
+      //     path.join(__dirname, '../node_modules')
+      //   ]
+      // },
       {
         test: /.jsx$/,
         loader: 'babel-loader'
