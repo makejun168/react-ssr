@@ -13,6 +13,7 @@ const app = express()
 app.use(bodyParser.json())
 // 对应 post 请求的 formData 统一转化为 req.body
 app.use(bodyParser.urlencoded({extended: false}))
+
 app.use(session({
 	maxAge: 10 * 60 * 1000,
 	name: 'tid',
@@ -22,6 +23,10 @@ app.use(session({
 }))
 
 app.use(favicon(path.join(__dirname, '../favicon.ico')))
+
+app.use('/api/user', require('../util/handle-login'))
+app.use('/api', require('../util/proxy'))
+
 
 if (!isDev) {
   const serverEntry = require('../dist/server-entry').default

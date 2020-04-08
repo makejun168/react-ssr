@@ -1,10 +1,12 @@
-const router = require('express').Router
+const router = require('express').Router()
 const axios = require('axios')
 
 const baseUrl = 'http://cnodejs.org/api/v1'
 
 // 登录接口
 router.post('/login', function (req, res) {
+	console.log(req);
+	console.log(res);
 	axios.post(`${baseUrl}/accesstoken`, {
 		accesstoken: req.body.accessToken
 	})
@@ -23,6 +25,7 @@ router.post('/login', function (req, res) {
 			})
 		})
 		.catch(err => {
+			console.log(err)
 			if (err.response) {
 				res.json({
 					success: false,
@@ -33,3 +36,6 @@ router.post('/login', function (req, res) {
 			}
 		})
 })
+
+
+module.exports = router
