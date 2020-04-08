@@ -10,12 +10,11 @@ const root = document.getElementById('root');
 ReactDOM.hydrate(<App />, root);
 
 const render = (Component) => {
-  ReactDOM.hydrate(
+	const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate
+	renderMethod(
     <AppContainer>
       <Provider appState={appState}>
-        <BrowserRouter>
-          <Component />
-        </BrowserRouter>
+	  	<Component />
       </Provider>
     </AppContainer>,
     root,

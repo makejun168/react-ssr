@@ -65,13 +65,16 @@ if (isDev) {
     host: '0.0.0.0', // 可以使用任何方式进行访问 可以使用本机访问,
     port: '8888',
     contentBase: path.join(__dirname, '../dist'),
-    // hot: true,
+    hot: true,
     historyApiFallback: {
       index: '/public/index.html'
     },
     overlay: {
       errors: true
-    }
+	},
+	proxy: {
+		'/api': 'http://localhost:3333'
+	},
   },
   config.plugins.push(new webpack.HotModuleReplacementPlugin())
 }

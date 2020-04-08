@@ -9,11 +9,11 @@ export default class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        {/* <div>
           <Link to="/list">首页</Link>
           <br />
           <Link to="/detail">详情页</Link>
-        </div>
+        </div> */}
         <Routes />
       </BrowserRouter>
     )
