@@ -4,10 +4,15 @@ const CircularJSON = require('circular-json');
 
 export default class TestApi extends React.Component {
 	login() {
-		const data = {
-			accessToken: 'c154d7f6-a3da-452a-b898-00ea4ac46999'
-		}
-		axios.post('/api/user/login', data ).then(resp => {
+		// axios.post('/cnode/accesstoken', {accesstoken: 'c154d7f6-a3da-452a-b898-00ea4ac46999'}, {'Content-Type': 'application/x-www-form-urlencoded'})
+		// 	.then(res => {
+		// 		console.log(res)
+		// 	})
+		// 	.catch(err => {
+		// 		console.log(err)
+		// 	})
+
+		axios.post('/api/user/login', {accesstoken: 'c154d7f6-a3da-452a-b898-00ea4ac46999'} ).then(resp => {
 			console.log(resp)
 		}).catch(err => {
 			console.log(err)

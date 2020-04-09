@@ -47,7 +47,7 @@ module.exports = function (app) {
     // 将 8888 端口的 js代码 代理到 3333 端口中获取
     app.use('/public', createProxyMiddleware({
         target: 'http://localhost:8888'
-    }));
+	}))
 
     app.get('*', function (req, res) {
         getTemplate().then(template => {

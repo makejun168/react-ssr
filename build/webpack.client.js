@@ -73,7 +73,8 @@ if (isDev) {
       errors: true
 	},
 	proxy: {
-		'/api': 'http://localhost:3333'
+		'/api': 'http://localhost:3333',
+		'/cnode': 'http://cnodejs.org/api/v1'
 	},
   },
   config.plugins.push(new webpack.HotModuleReplacementPlugin())

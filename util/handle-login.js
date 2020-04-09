@@ -5,21 +5,18 @@ const baseUrl = 'http://cnodejs.org/api/v1'
 
 // 登录接口
 router.post('/login', function (req, res) {
-	console.log('token', req.body.accessToken);
-	// axios({
-	// 	method: 'post',
-	// 	url: `${baseUrl}/accesstoken`,
-	// 	data: {
-	// 		'accesstoken': req.body.accessToken
-	// 	},
-	// 	header: {
-	// 		'Content-Type': 'application/x-www-form-urlencoded'
-	// 	}
-	// })
-
-	axios.post(`${baseUrl}/accesstoken`, {
-		accesstoken: req.body.accessToken
+	console.log('token', req.body.accesstoken);
+	axios({
+		method: 'post',
+		url: `${baseUrl}/accesstoken`,
+		data: {
+			accesstoken: req.body.accesstoken
+		},
+		timeout: 3000
 	})
+	// axios.post(`${baseUrl}/accesstoken`, {
+	// 	accesstoken: req.body.accesstoken
+	// }, {'Content-Type': 'application/x-www-form-urlencoded'})
 	.then(resp => {
 		// console.log('resp', resp);
 		if (resp.status === 200 && resp.data.success) {
@@ -36,6 +33,7 @@ router.post('/login', function (req, res) {
 		})
 	})
 	.catch(err => {
+		console.log(err)
 		// console.log(err.data);
 		if (err.response) {
 			res.json({
@@ -43,10 +41,9 @@ router.post('/login', function (req, res) {
 				data: err.response
 			})
 		} else {
-			next(err)
+			// next(err)
 		}
 	})
-
 })
 
 

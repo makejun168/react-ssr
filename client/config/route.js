@@ -15,5 +15,5 @@ export default () => [
   <Route path="/" key="home" render={() => <Redirect to="/list" />} component={TopicList} exact />,
   <Route path="/list" component={TopicList} key="list" />,
   <Route path="/detail" component={TopicDetail} key="detail" />,
-  <Route path="/testApi" component={TestApi} key="test"/>
+  <Route path="/test" component={TestApi} key="test"/>
 ]
